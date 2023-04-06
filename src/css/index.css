@@ -1,0 +1,243 @@
+@import url("./functions/reset.css");
+@import url("./functions/base.css");
+@import url("./pc/detail-menu.css");
+@import url("./pc/opening.css");
+
+.load {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  z-index: 100;
+}
+/*-----------
+*  grid
+---------------*/
+.grid {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 12;
+  pointer-events: none;
+}
+.grid-box {
+  width: 12.4rem;
+  height: 100vh;
+  border: 1px #fff solid;
+}
+@media (max-width: 767px) {
+  .grid-box {
+    width: 3.6rem;
+  }
+}
+/*-----------
+*  ly-header
+---------------*/
+.ly-header {
+  position: relative;
+  z-index: 10;
+}
+
+.ly-header__logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+.ly-header__button {
+  width: fit-content;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2.4rem;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
+.ly-header__pages {
+  position: absolute;
+  top: 2rem;
+  right: 16rem;
+  display: flex;
+  gap: 2rem;
+  mix-blend-mode: difference;
+}
+.--page-button {
+  font-size: 2.4rem;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+/*-----------
+*  ly-main
+---------------*/
+.ly-main {
+  width: 100%;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: 100svh;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.ly-main__title {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  position: absolute;
+  left: 2rem;
+  bottom: 5rem;
+  font-size: 16rem;
+  color: #fff;
+  mix-blend-mode: difference;
+  overflow: hidden;
+  padding: 0.3rem 0;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.ly-main__title span {
+  position: relative;
+  top: -16rem;
+}
+
+.ly-main__link {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.ly-main__link-box {
+  min-width: 50rem;
+  max-width: 100%;
+  z-index: 1;
+}
+.ly-main__link-number {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.ly-main__link-title {
+  width: fit-content;
+  font-size: 5rem;
+  color: #fff;
+  padding: 0.5rem 0;
+  position: relative;
+}
+.ly-main__link-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6rem;
+  transform: translateY(-50%);
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../../public/window.svg) center no-repeat;
+  background-size: 100%;
+}
+
+.archive-image-bg,
+.works-image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  margin: 0 calc(50% - 50vw);
+  z-index: -10;
+  pointer-events: none;
+}
+.archive-image,
+.works-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.ly-main__en {
+  position: absolute;
+  top: 1rem;
+  right: -3rem;
+  writing-mode: vertical-rl;
+  font-size: 7.6rem;
+  color: #fff;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.ly-main__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: absolute;
+  top: 50%;
+  right: 20rem;
+  transform: translateY(-50%);
+  width: 10rem;
+  height: 10rem;
+  mix-blend-mode: difference;
+}
+
+.ly-main__prev {
+  font-size: 3rem;
+  color: #fff;
+}
+.ly-main__next {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.ly-main__buttons--works {
+  visibility: hidden;
+}
+.ly-main__buttons--archive {
+  visibility: hidden;
+}
+
+.ly-main__total {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: fit-content;
+  position: absolute;
+  top: 35%;
+  right: 21rem;
+  font-size: 2rem;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.ly-main__total::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  right: 40%;
+  transform: translate(-50%, 0);
+  width: 1rem;
+  height: 1px;
+  background-color: #fff;
+}
+
+.ly-main__total--archive {
+  visibility: hidden;
+}
+.ly-main__total--works {
+  visibility: hidden;
+}
+
+.--total-count,
+.--total {
+  min-width: 2rem;
+}
